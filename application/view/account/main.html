@@ -1,0 +1,37 @@
+<tal:block metal:define-macro="content">
+	<div class="jumbotron mt-1 col-md-6 offset-md-3">
+	    <form action="${php:view.url('account/main')}" method="post">
+	        <h2 class="text-center">Log in</h2>
+	        <div class="alert alert-warning" role="alert" tal:condition="model">
+	            <strong>Error!</strong> ${model}
+	        </div>
+	        <div class="form-group">
+	        	<label for="login">Login*</label>
+	        	<div class="input-group">
+					<div class="input-group-prepend">
+						<label for="login" class="input-group-text">
+							<i class="fa fa-user"></i>
+						</label>
+					</div>
+					<input type="text" class="form-control" placeholder="Login name" aria-label="Login name" aria-describedby="login" required="required" name="login" id="login" />
+				</div>
+				<small id="loginHelp" class="form-text text-muted">Enter the user login ...</small>
+	        </div>
+	        <div class="form-group">
+	        	<label for="password">Password*</label>
+	        	<div class="input-group">
+					<div class="input-group-prepend">
+						<label for="password" class="input-group-text">
+							<i class="fa fa-user-secret"></i>
+						</label>
+					</div>
+					<input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password" required="required" name="password" id="password" />
+				</div>
+				<small id="passwordHelp" class="form-text text-muted">Enter the secret word ...</small>
+	        </div>
+	        <div class="form-group">
+	            <button type="submit" class="btn btn-primary btn-block">Log in</button>
+	        </div>
+	    </form>
+	</div>
+</tal:block>

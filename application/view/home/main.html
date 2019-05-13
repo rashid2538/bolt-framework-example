@@ -1,0 +1,33 @@
+<tal:block metal:define-macro="content">
+	<div class="container-fluid">
+		<h1>ToDo Lists</h1>
+		<div id="accordion">
+			<div class="card mt-1" tal:repeat="todoList model">
+				<div class="card-header">
+					<a class="card-link pull-left" data-toggle="collapse" href="#collapse${todoList/id}" title="Click to view items inside.">
+						${todoList/name}
+					</a>
+					<button type="button" class="pull-right btn-sm btn-success" title="Add new item to the list." data-listitem="${todoList/id}">
+						<i class="fa fa-plus"></i>
+					</button>
+					<div class="pull-right p-1"></div>
+					<button type="button" data-toggle="collapse" data-target="#collapse${todoList/id}" class="pull-right btn-sm btn-primary" title="Show/Hide items inside.">
+						<i class="fa fa-eye"></i>
+					</button>
+				</div>
+				<div id="collapse${todoList/id}" class="collapse show" data-parent="#accordion">
+					<ul class="list-group list-group-flush">
+						<li tal:repeat="item php:todoList.todoListItem.fetch()" class="list-group-item">
+							<tal:block tal:condition="php:item.done EQ 'N'">
+								<i class="fa fa-clock-o"></i> ${item/title}
+							</tal:block>
+							<s class="text-success" tal:condition="php:item.done EQ 'Y'">
+								<i class="fa fa-check"></i> ${item/title}
+							</s>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</tal:block>

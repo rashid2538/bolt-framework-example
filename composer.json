@@ -1,0 +1,41 @@
+{
+	"name": "rashid2538/bolt-framework-example",
+    "config": {
+        "platform": {
+            "php": "5.6"
+        }
+    }, "require": {
+        "rashid2538/bolt-framework": "v0.9.3",
+        "rashid2538/bolt-plugin-phptal": "v1.0.1",
+        "components/jquery": "3.3.1",
+        "alexandermatveev/popper-bundle": "1.0",
+        "twbs/bootstrap": "v4.3.1",
+        "fortawesome/font-awesome": "v4.7.0"
+    }, "scripts": {
+        "post-package-install": [
+            "Bolt\\ComposerAssetInstaller::postPackageInstall"
+        ],
+        "post-package-update": [
+            "Bolt\\ComposerAssetInstaller::postPackageUpdate"
+        ]
+    }, "extra": {
+    	"asset-installer": {
+    		"assets": {
+    			"twbs/bootstrap": {
+    				"dist": "public/assets/lib/bootstrap"
+    			}, "fortawesome/font-awesome": {
+    				"css": "public/assets/lib/font-awesome/css",
+    				"fonts": "public/assets/lib/font-awesome/fonts"
+    			}, "components/jquery": {
+                    "jquery.*": "public/assets/lib/jquery/"
+                }, "alexandermatveev/popper-bundle": {
+                    "Resources/public": "public/assets/lib/popper"
+                }
+    		}
+    	}
+    }, "autoload": {
+		"psr-4": {
+			"Example\\":"application"
+		}
+	}
+}

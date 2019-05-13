@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="base" content="${php:view.url()}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+		${structure php:view.renderCss()}
+
+		<title>${php:view.title()}</title>
+	</head>
+	<body>
+		<tal:block metal:use-macro="${view/path}layouts/header.html/content"></tal:block>
+		<div class="mt-1"></div>
+		<tal:block metal:use-macro="${viewTemplate}/content"></tal:block>
+
+		${structure php:view.renderJs()}
+	</body>
+</html>
