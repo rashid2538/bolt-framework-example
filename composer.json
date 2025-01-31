@@ -7,7 +7,7 @@
     }, "require": {
         "rashid2538/bolt-framework": "v0.9.3",
         "rashid2538/bolt-plugin-phptal": "v1.0.1",
-        "components/jquery": "3.3.1",
+        "components/jquery": "3.5.1",
         "alexandermatveev/popper-bundle": "1.0",
         "twbs/bootstrap": "v4.3.1",
         "fortawesome/font-awesome": "v4.7.0"
